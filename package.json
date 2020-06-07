@@ -1,0 +1,33 @@
+{
+  "name": "authentication-with-passport",
+  "version": "1.0.0",
+  "description": "Passport local auth",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BalgopalPatro/node-Authentication-with-passport.js.git"
+  },
+  "keywords": [
+    "Passport",
+    "Authentication"
+  ],
+  "author": "N Balgopal Patro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BalgopalPatro/node-Authentication-with-passport.js/issues"
+  },
+  "homepage": "https://github.com/BalgopalPatro/node-Authentication-with-passport.js#readme",
+  "dependencies": {
+    "consolidate": "^0.15.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
