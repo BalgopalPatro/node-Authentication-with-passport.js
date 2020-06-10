@@ -26,6 +26,7 @@
     "consolidate": "^0.15.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "jsonwebtoken": "^8.5.1",
     "passport": "^0.4.1",
