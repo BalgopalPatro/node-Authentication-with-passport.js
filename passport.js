@@ -37,4 +37,11 @@ passport.serializeUser(function(user, done) {
     console.log(user);
     done(null, user.email);
 });
+
+passport.deserializeUser(function(id, done) {
+    console.log(id);  
+    done(null, { email: "patrobg18@gmail.com", password: "1234" });
+  });
+
 module.exports = passport;
+

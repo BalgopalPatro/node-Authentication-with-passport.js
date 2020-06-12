@@ -9,7 +9,9 @@ const passport = require('./passport');
 const auth = require('./routes/auth');
 const user = require('./routes/user');
 
-app.use(session({ secret: "helloBg" }));
+app.use(session({
+    secret: "helloBg",
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -17,7 +19,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded());
 
 app.use('/auth', auth);
-app.use('/user', passport.authenticate('jwt', { session: false }), user);
+app.use('/user', passport.authenticate('jwt', { session: true }), user);
 app.use(cors);
 
 app.engine('hbs', engines.handlebars);
@@ -25,11 +27,16 @@ app.set('views', './views');
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
+    console.log(req.isAuthenticated());
+    // console.log(req.user);
+    if(req.isAuthenticated()){
+        res.redirect('/user');
+    }
     res.render('index');
 })
 
-app.get('/success',(req,res)=>{
-    res.json({message: "Login Success"});
+app.get('/success', (req, res) => {
+    res.json({ message: "You Are Already Logged in" });
 })
 
 app.listen(3001, () => {

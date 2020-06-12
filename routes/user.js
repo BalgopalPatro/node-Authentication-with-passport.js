@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 
 /* GET user profile. */
 router.get('/profile', function(req, res, next) {
+  console.log(req.isAuthenticated());
     res.send(req.user);
 });
 

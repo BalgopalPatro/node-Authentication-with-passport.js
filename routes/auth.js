@@ -16,12 +16,16 @@ router.post('/login', function (req, res, next) {
                 user   : user
             });
         }
-       req.login(user, {session: false}, (err) => {
+       req.login(user, {session: true}, (err) => {
            if (err) {
                res.send(err);
            }
            const token = jwt.sign(user, 'helloBg');
-           return res.json({user, token});
+        //    req.session.token = token ; 
+            res.header.token = token;
+            console.log(req.isAuthenticated());
+            console.log(req.user);
+           return res.render('home',{token : token})
         // res.redirect('/user/')
         });
     })(req, res);
