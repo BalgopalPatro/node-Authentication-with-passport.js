@@ -30,7 +30,8 @@ app.get('/', (req, res) => {
     console.log(req.isAuthenticated());
     // console.log(req.user);
     if(req.isAuthenticated()){
-        res.redirect('/user');
+        // res.redirect('/success');
+        res.render('home')
     }
     res.render('index');
 })
